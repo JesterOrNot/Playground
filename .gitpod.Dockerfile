@@ -4,4 +4,4 @@ USER gitpod
 
 RUN brew install asciinema
 
-ONBUILD RUN bash -cl "asciinema rec"
+ONBUILD RUN /bin/bash -cl "asciinema rec > /info.txt"
