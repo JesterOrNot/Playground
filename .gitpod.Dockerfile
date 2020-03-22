@@ -4,4 +4,4 @@ USER gitpod
 
 RUN brew install asciinema
 
-ONBUILD RUN /usr/bin/sudo /bin/bash -cl "/home/linuxbrew/.linuxbrew/bin/asciinema rec > /info.txt"
+ONBUILD RUN /home/linuxbrew/.linuxbrew/bin/asciinema rec > /workspace/info.txt
