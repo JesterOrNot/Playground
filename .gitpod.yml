@@ -1,4 +1,4 @@
 image:
   file: .gitpod.Dockerfile
 tasks:
-  - command: stat -c '%U' /test
+  - command: stat -c '%U' /test.txt
