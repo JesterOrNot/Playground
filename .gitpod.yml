@@ -1,0 +1,5 @@
+vscode:
+  extensions:
+    - alexcvzz.vscode-sqlite@0.8.1:PQywmjPo5CPnGuwRSsyeiw==
+tasks:
+  - command: cargo run
