@@ -1,22 +1,6 @@
 use rusqlite::{params, Connection};
 use std::fmt::{self, Display, Formatter};
 
-struct Person {
-    id: i32,
-    name: String,
-    age: i32,
-}
-
-impl Display for Person {
-    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-        write!(
-            f,
-            "{} is {} years old and their #ID is {}",
-            self.name, self.age, self.id
-        )
-    }
-}
-
 fn main() -> rusqlite::Result<()> {
     let connection = Connection::open("sql/test.db")?;
     let mut stmt = connection.prepare("SELECT * FROM USER")?;
@@ -31,4 +15,20 @@ fn main() -> rusqlite::Result<()> {
         println!("{}", i?);
     }
     Ok(())
+}
+
+struct Person {
+    id: i32,
+    name: String,
+    age: i32,
+}
+
+impl Display for Person {
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "{} is {} years old and their #ID is {}",
+            self.name, self.age, self.id
+        )
+    }
 }
