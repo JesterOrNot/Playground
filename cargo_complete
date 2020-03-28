@@ -1,0 +1,95 @@
+_cargo_complete() {
+    local cur
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    case "$cur" in
+        b*)
+            COMPREPLY=($(compgen -W 'build bench' -- "$cur"))
+        ;;
+        c*)
+            COMPREPLY=($(compgen -W 'check clean' -- "$cur"))
+        ;;
+        d*)
+            COMPREPLY=($(compgen -W 'doc' -- "$cur"))
+        ;;
+        f*)
+            COMPREPLY=($(compgen -W 'fix' -- "$cur"))
+        ;;
+        g*)
+            COMPREPLY=($(compgen -W 'generate-lockfile' -- "$cur"))
+        ;;
+        h*)
+            COMPREPLY=($(compgen -W 'help' -- "$cur"))
+        ;;
+        i*)
+            COMPREPLY=($(compgen -W 'init install' -- "$cur"))
+        ;;
+        l*)
+            COMPREPLY=($(compgen -W 'login locate-project' -- "$cur"))
+        ;;
+        m*)
+            COMPREPLY=($(compgen -W 'metadata' -- "$cur"))
+        ;;
+        n*)
+            COMPREPLY=($(compgen -W 'new' -- "$cur"))
+        ;;
+        o*)
+            COMPREPLY=($(compgen -W 'owner' -- "$cur"))
+        ;;
+        p*)
+            COMPREPLY=($(compgen -W 'package pkgid publish' -- "$cur"))
+        ;;
+        r*)
+            COMPREPLY=($(compgen -W 'rustc rustdoc run' -- "$cur"))
+        ;;
+        s*)
+            COMPREPLY=($(compgen -W 'search' -- "$cur"))
+        ;;
+        t*)
+            COMPREPLY=($(compgen -W 'test' -- "$cur"))
+        ;;
+        u*)
+            COMPREPLY=($(compgen -W 'uninstall update' -- "$cur"))
+        ;;
+        v*)
+            COMPREPLY=($(compgen -W 'version vendor verify-project' -- "$cur"))
+        ;;
+        y*)
+            COMPREPLY=($(compgen -W 'yank' -- "$cur"))
+        ;;
+        *)
+            COMPREPLY=(
+                "build"
+                "check"
+                "clean"
+                "doc"
+                "new"
+                "init"
+                "owner"
+                "fix"
+                "run"
+                "package"
+                "verify-project"
+                "pkgid"
+                "login"
+                "vendor"
+                "yank"
+                "test"
+                "metadata"
+                "bench"
+                "rustc"
+                "locate-project"
+                "rustdoc"
+                "generate-lockfile"
+                "update"
+                "version"
+                "search"
+                "publish"
+                "install"
+                "uninstall"
+                "help"
+            )
+        ;;
+    esac
+}
+complete -F _cargo_complete cargo
