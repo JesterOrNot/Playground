@@ -10,3 +10,10 @@ ports:
 tasks:
   - init: npm i
     command: node lookUpZelda.js
+github:
+  prebuilds:
+    branches: true
+    pullRequestsFromForks: true
+    addComment: true
+    addBadge: true
+    addLabel: true
