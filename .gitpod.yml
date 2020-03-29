@@ -8,4 +8,5 @@ ports:
   - port: 35900
     onOpen: ignore
 tasks:
-  - command: node lookUpZelda.js
+  - init: npm i
+    command: node lookUpZelda.js
