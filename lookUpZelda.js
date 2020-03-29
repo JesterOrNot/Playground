@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 (async () => {
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({args: ['--no-sandbox'], headless: false})
   const page = await browser.newPage()
   
   const navigationPromise = page.waitForNavigation()
@@ -13,9 +13,6 @@ const puppeteer = require('puppeteer');
   
   await page.waitForSelector('.A8SBwf > .RNNXgb > .SDkEP > .a4bIc > .gLFyf')
   await page.click('.A8SBwf > .RNNXgb > .SDkEP > .a4bIc > .gLFyf')
-  
-  await page.waitForSelector('.UUbT9 > .aajZCb > .tfB0Bf > center > .gNO89b')
-  await page.click('.UUbT9 > .aajZCb > .tfB0Bf > center > .gNO89b')
   
   await navigationPromise
   
