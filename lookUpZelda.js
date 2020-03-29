@@ -1,8 +1,7 @@
 const puppeteer = require("puppeteer");
 (async () => {
   const browser = await puppeteer.launch({
-    args: ["--no-sandbox"],
-    headless: false
+    args: ["--no-sandbox"]
   });
   const page = await browser.newPage();
 
