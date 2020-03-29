@@ -1,0 +1,23 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "The last playground repo I will make (hopefully)",
+  "main": "lookUpZelda.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node lookUpZelda.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JesterOrNot/Playground.git"
+  },
+  "author": "Sean Hellum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JesterOrNot/Playground/issues"
+  },
+  "homepage": "https://github.com/JesterOrNot/Playground#readme",
+  "dependencies": {
+    "puppeteer": "^2.1.1"
+  }
+}
