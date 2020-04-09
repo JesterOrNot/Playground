@@ -45,5 +45,5 @@ github:
 gitConfig:
   alias.amend: commit --amend
   core.whitespace.tabWidth: "4"
-checkoutLocation: /home/myApp
-workspaceLocation: /home/myApp
+checkoutLocation: ../home/myApp
+workspaceLocation: ../home/myApp
