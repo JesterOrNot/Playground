@@ -2,6 +2,6 @@ FROM gitpod/workspace-full
 
 USER gitpod
 
-COPY . /script
+COPY --chown=gitpod . /script
 
 RUN /script/script.sh
