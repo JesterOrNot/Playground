@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo apt-get install zsh
+sudo apt-get -y install zsh
