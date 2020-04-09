@@ -1,0 +1,49 @@
+image:
+  file: .gitpod.Dockerfile
+  context: scripts
+ports:
+  - port: 8000
+    onOpen: open-preview
+  - port: 12
+    onOpen: ignore
+  - port: 32
+    onOpen: notify
+  - port: 45
+    onOpen: open-browser
+  - port: 99-120
+    onOpen: ignore
+tasks:
+  - prebuild: echo "This only runs as a prebuild"
+    openIn: left
+  - before: echo "This is a before task"
+    openIn: bottom
+  - init: echo 'init script'
+    openIn: right
+  - command: echo "This is a command"
+    openMode: split-right
+  - command: echo "Normal CMD"
+  - before: "Multiple Commands "
+    init: "In"
+    command: "One Terminal"
+  - name: Named Terminal
+    command: echo "FOO=$FOO"
+    env: 
+      FOO: BAR
+vscode:
+  extensions:
+    - esbenp.prettier-vscode@4.1.1:PgVOq0TZoijwxC5s24XFSA==
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: true
+    addComment: false
+    addBadge: true
+    addLabel: true
+gitConfig:
+  alias.amend: commit --amend
+  core.whitespace.tabWidth: "4"
+checkoutLocation: /home/myApp
+workspaceLocation: /home/myApp
