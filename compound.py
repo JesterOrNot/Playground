@@ -3,9 +3,8 @@ from typing import Callable
 from typing import Type
 
 
-def interest_equation(
-    func: Callable[[float, float, float, float], float]
-) -> Callable[[float, float, float, float], float]:
+def interest_equation(func: Callable[[float, float, float, float], float]
+                      ) -> Callable[[float, float, float, float], float]:
     def inner(a, b, c, d) -> float:
         return round(func(a, b, c, d), 2)
 
@@ -32,7 +31,8 @@ class Interest:
     """
 
     @classmethod
-    def get_solver(cls, variable: str) -> Callable[[float, float, float, float], float]:
+    def get_solver(cls, variable: str
+                   ) -> Callable[[float, float, float, float], float]:
         missing_var = variable.lower()
         if missing_var == "a":
             return cls.compound_interest_a
@@ -48,17 +48,17 @@ class Interest:
     @staticmethod
     @interest_equation
     def compound_interest_a(P: float, r: float, n: float, t: float) -> float:
-        return P * (1 + (r / n)) ** (t * n)
+        return P * (1 + (r / n))**(t * n)
 
     @staticmethod
     @interest_equation
     def compound_interest_p(A: float, r: float, n: float, t: float) -> float:
-        return A / (1 + r / n) ** (n * t)
+        return A / (1 + r / n)**(n * t)
 
     @staticmethod
     @interest_equation
     def compound_interest_r(A: float, P: float, n: float, t: float) -> float:
-        return log((A / P) ** (1 / (n * t)) - 1)
+        return log((A / P)**(1 / (n * t)) - 1)
 
     @staticmethod
     @interest_equation
