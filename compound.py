@@ -1,5 +1,6 @@
 from math import log
-from typing import Callable, Type
+from typing import Callable
+from typing import Type
 
 
 def interest_equation(
