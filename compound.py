@@ -2,7 +2,7 @@ from math import log
 from typing import Callable, Type
 
 
-def interest_equation(func: Callable[[Type, float, float, float, float], float]) -> Callable[[Type, float, float, float, float], float]:
+def interest_equation(func: Callable[[float, float, float, float], float]) -> Callable[[float, float, float, float], float]:
     def inner(a, b, c, d) -> float:
         return round(func(a, b, c, d), 2)
     return inner
