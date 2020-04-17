@@ -2,10 +2,11 @@ from math import log
 from typing import Callable, Type
 
 
-def interest_equation(func: Callable) -> Callable:
-    def inner(cls, a, b, c, d) -> float:
-        return round(func(cls, a, b, c, d), 2)
+def interest_equation(func: Callable[[Type, float, float, float, float], float]) -> Callable[[Type, float, float, float, float], float]:
+    def inner(a, b, c, d) -> float:
+        return round(func(a, b, c, d), 2)
     return inner
+
 
 class Interest:
     """
@@ -42,26 +43,26 @@ class Interest:
 
     @staticmethod
     @interest_equation
-    def compound_interest_a(cls, P: float, r: float, n: float, t: float) -> float:
+    def compound_interest_a(P: float, r: float, n: float, t: float) -> float:
         return P*(1+(r/n))**(t*n)
 
     @staticmethod
     @interest_equation
-    def compound_interest_p(cls, A: float, r: float, n: float, t: float) -> float:
+    def compound_interest_p(A: float, r: float, n: float, t: float) -> float:
         return A / (1 + r/n)**(n*t)
 
     @staticmethod
     @interest_equation
-    def compound_interest_r(cls, A: float, P: float, n: float, t: float) -> float:
+    def compound_interest_r(A: float, P: float, n: float, t: float) -> float:
         return log((A/P)**(1/(n*t))-1)
 
     @staticmethod
     @interest_equation
-    def compound_interest_t(cls, A: float, P: float, n: float, r: float) -> float:
+    def compound_interest_t(A: float, P: float, n: float, r: float) -> float:
         return log(A/P) / (n * log(1 + r / n))
 
     @staticmethod
-    def get_equation_a(cls, P: float, r: float, n: float, t: float) -> str:
+    def get_equation_a(P: float, r: float, n: float, t: float) -> str:
         return "A = {}*(1+{}/{})**({}*{})".format(P, r, n, t, n)
 
 
