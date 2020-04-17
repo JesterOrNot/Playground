@@ -2,9 +2,12 @@ from math import log
 from typing import Callable, Type
 
 
-def interest_equation(func: Callable[[float, float, float, float], float]) -> Callable[[float, float, float, float], float]:
+def interest_equation(
+    func: Callable[[float, float, float, float], float]
+) -> Callable[[float, float, float, float], float]:
     def inner(a, b, c, d) -> float:
         return round(func(a, b, c, d), 2)
+
     return inner
 
 
@@ -30,13 +33,13 @@ class Interest:
     @classmethod
     def get_solver(cls, variable: str) -> Callable[[float, float, float, float], float]:
         missing_var = variable.lower()
-        if missing_var == 'a':
+        if missing_var == "a":
             return cls.compound_interest_a
-        elif missing_var == 'p':
+        elif missing_var == "p":
             return cls.compound_interest_p
-        elif missing_var == 't':
+        elif missing_var == "t":
             return cls.compound_interest_t
-        elif missing_var == 'r':
+        elif missing_var == "r":
             return cls.compound_interest_r
         else:
             raise ValueError("Invalid variable name")
@@ -44,22 +47,22 @@ class Interest:
     @staticmethod
     @interest_equation
     def compound_interest_a(P: float, r: float, n: float, t: float) -> float:
-        return P*(1+(r/n))**(t*n)
+        return P * (1 + (r / n)) ** (t * n)
 
     @staticmethod
     @interest_equation
     def compound_interest_p(A: float, r: float, n: float, t: float) -> float:
-        return A / (1 + r/n)**(n*t)
+        return A / (1 + r / n) ** (n * t)
 
     @staticmethod
     @interest_equation
     def compound_interest_r(A: float, P: float, n: float, t: float) -> float:
-        return log((A/P)**(1/(n*t))-1)
+        return log((A / P) ** (1 / (n * t)) - 1)
 
     @staticmethod
     @interest_equation
     def compound_interest_t(A: float, P: float, n: float, r: float) -> float:
-        return log(A/P) / (n * log(1 + r / n))
+        return log(A / P) / (n * log(1 + r / n))
 
     @staticmethod
     def get_equation_a(P: float, r: float, n: float, t: float) -> str:
@@ -68,5 +71,5 @@ class Interest:
 
 if __name__ == "__main__":
     app = Interest()
-    solver = app.get_solver('a')
+    solver = app.get_solver("a")
     print(solver(3300, 0.22, 1, 3))
