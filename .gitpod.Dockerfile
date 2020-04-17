@@ -6,4 +6,4 @@ RUN sudo apt-get update -q \
         nmap \
         ufw
 
-RUN ufw allow 2525
+RUN sudo ufw allow 2525
