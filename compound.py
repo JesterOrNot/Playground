@@ -7,7 +7,6 @@ def interest_equation(func: Callable[[Type, float, float, float, float], float])
         return round(func(cls, a, b, c, d), 2)
     return inner
 
-
 class Interest:
     """
     P=principle
@@ -41,27 +40,27 @@ class Interest:
         else:
             raise ValueError("Invalid variable name")
 
-    @classmethod
+    @staticmethod
     @interest_equation
     def compound_interest_a(cls, P: float, r: float, n: float, t: float) -> float:
         return P*(1+(r/n))**(t*n)
 
-    @classmethod
+    @staticmethod
     @interest_equation
     def compound_interest_p(cls, A: float, r: float, n: float, t: float) -> float:
         return A / (1 + r/n)**(n*t)
 
-    @classmethod
+    @staticmethod
     @interest_equation
     def compound_interest_r(cls, A: float, P: float, n: float, t: float) -> float:
         return log((A/P)**(1/(n*t))-1)
 
-    @classmethod
+    @staticmethod
     @interest_equation
     def compound_interest_t(cls, A: float, P: float, n: float, r: float) -> float:
         return log(A/P) / (n * log(1 + r / n))
 
-    @classmethod
+    @staticmethod
     def get_equation_a(cls, P: float, r: float, n: float, t: float) -> str:
         return "A = {}*(1+{}/{})**({}*{})".format(P, r, n, t, n)
 
