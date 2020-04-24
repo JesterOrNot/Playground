@@ -1,0 +1,5 @@
+github:
+  prebuilds:
+    branches: true
+    pullRequestsFromForks: true
+    addBadge: true
