@@ -1,9 +1,14 @@
 image:
   file: .gitpod.Dockerfile
 tasks:
-  - init: scripts/prebuild.sh
+  - name: Server
+    init: scripts/prebuild.sh
+    command: cargo run
 github:
   prebuilds:
     branches: true
     pullRequestsFromForks: true
     addBadge: true
+ports:
+  - port: 8000
+    onOpen: ignore
