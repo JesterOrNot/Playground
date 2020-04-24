@@ -2,3 +2,8 @@ image:
   file: .gitpod.Dockerfile
 tasks:
   - init: scripts/prebuild.sh
+github:
+  prebuilds:
+    branches: true
+    pullRequestsFromForks: true
+    addBadge: true
