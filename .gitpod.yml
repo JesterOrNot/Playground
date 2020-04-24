@@ -9,6 +9,3 @@ github:
     branches: true
     pullRequestsFromForks: true
     addBadge: true
-ports:
-  - port: 8000
-    onOpen: ignore
