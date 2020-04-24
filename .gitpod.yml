@@ -1,7 +1,4 @@
 image:
   file: .gitpod.Dockerfile
 tasks:
-  - init: |
-      nohup cargo run &
-      gp await-port 8000
-      kill $(pidof target/debug/playground)
+  - init: scripts/prebuild.sh
