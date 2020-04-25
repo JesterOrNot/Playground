@@ -9,5 +9,5 @@ nohup cargo run &
 gp await-port 8000
 echo "Killing process"
 echo "Process: $(pidof target/debug/$program_name)"
-killall -9 $(pidof target/debug/$program_name)
+kill -9 $(pidof target/debug/$program_name)
 echo "command `cargo run` successfully cached"
