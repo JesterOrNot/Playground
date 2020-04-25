@@ -9,3 +9,6 @@ nohup cargo run &
 gp await-port 8000
 echo "Killing process"
 kill -9 $(pidof target/debug/$program_name)
+if [[ ! "$@" =~ '--dev' ]]; then
+    rm *.out
+fi
