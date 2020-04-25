@@ -3,3 +3,6 @@ github:
     branches: true
     pullRequestsFromForks: true
     addBadge: true
+ports:
+  - port: 50-60
+    onOpen: ignore
