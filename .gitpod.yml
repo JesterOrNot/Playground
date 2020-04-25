@@ -3,6 +3,7 @@ image:
 tasks:
   - name: Server
     init: scripts/prebuild.sh
+    command: cargo run
 github:
   prebuilds:
     branches: true
