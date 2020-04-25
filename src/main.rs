@@ -12,4 +12,3 @@ fn index() -> String {
 fn main() {
     rocket::ignite().mount("/", routes![index]).launch();
 }
-
