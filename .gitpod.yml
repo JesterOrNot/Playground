@@ -1,3 +1,4 @@
+image: pranav8350/gitpod-android
 github:
   prebuilds:
     branches: true
