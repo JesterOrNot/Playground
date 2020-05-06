@@ -1,8 +1,2 @@
-image: docker:dind-rootless
-  # file: Dockerfile
-github:
-  prebuilds:
-    branches: true
-    pullRequestsFromForks: true
-    addBadge: true
+image: debian
 privileged: true
