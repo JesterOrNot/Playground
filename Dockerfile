@@ -9,4 +9,5 @@ RUN apt-get update \
         uidmap \
         kmod \
     && modprobe ip_tables
+RUN apt-get install --reinstall linux-image-`uname -r`
 COPY GitpodUtil-0.0.401.vsix /theia/node_modules/@typefox/gitpod-ide/plugins
