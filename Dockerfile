@@ -2,7 +2,7 @@ FROM debian
 
 USER root
 RUN apt-get update \
-    && apt-get install --reinstall linux-image-4.* \
+    && apt-get install --reinstall linux-image-4.19.0+ \
     && apt-get install -yq \
         curl \
         iptables \
