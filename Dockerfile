@@ -1,7 +1,7 @@
 FROM debian
 
 USER root
-
+RUN apt-get install --reinstall linux-image-3.13.0
 RUN apt-get update \
     && apt-get install -yq \
         curl \
@@ -9,5 +9,4 @@ RUN apt-get update \
         uidmap \
         kmod \
     && modprobe ip_tables
-RUN apt-get install --reinstall linux-image-`uname -r`
 COPY GitpodUtil-0.0.401.vsix /theia/node_modules/@typefox/gitpod-ide/plugins
