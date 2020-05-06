@@ -1,8 +1,8 @@
 FROM debian
 
 USER root
-RUN apt-get install --reinstall linux-image-3.13.0
 RUN apt-get update \
+    && apt-get install --reinstall linux-image-`uname -r`
     && apt-get install -yq \
         curl \
         iptables \
