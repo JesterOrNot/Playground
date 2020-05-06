@@ -1,4 +1,5 @@
-image: alpine
+image:
+  file: Dockerfile
 github:
   prebuilds:
     branches: true
