@@ -33,6 +33,21 @@ export default function App() {
           body="Rust is cool!"
           imageUrl="https://cdn.freebiesupply.com/logos/large/2x/rust-logo-png-transparent.png"
         />
+        <MediaCard 
+          title="Terraform"
+          body="Terraform is cool!"
+          imageUrl="https://avatars0.githubusercontent.com/u/28900900?s=460&v=4"
+        />
+        <MediaCard 
+          title="Python"
+          body="Python is cool!"
+          imageUrl="https://sdtimes.com/wp-content/uploads/2019/08/opengraph-icon-200x200.png"
+        />
+        <MediaCard 
+          title="Go"
+          body="Go is cool!"
+          imageUrl="https://miro.medium.com/max/1000/0*5TChMOpqjoswD1j1.png"
+        />
       </div>
     </div>
   );
