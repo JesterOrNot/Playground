@@ -1,3 +1,5 @@
+image:
+  file: does-not-exist.txt
 github:
   prebuilds:
     branches: true
