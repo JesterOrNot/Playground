@@ -1,4 +1,4 @@
-image: scratch
+image: archlinux
 github:
   prebuilds:
     branches: true
