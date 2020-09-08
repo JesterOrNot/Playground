@@ -1,3 +1,4 @@
+image: gitpod/mysql
 github:
   prebuilds:
     branches: true
