@@ -1,4 +1,5 @@
-image: archlinux
+image:
+  file: .gitpod.Dockerfile
 github:
   prebuilds:
     branches: true
