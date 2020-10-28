@@ -1,5 +1,15 @@
+image: gitpod/workspace-full-vnc
+ports:
+  - port: 6080
+    onOpen: open-preview
+  - port: 5900
+    onOpen: ignore
+  - port: 35900
+    onOpen: ignore
 github:
   prebuilds:
     branches: true
     pullRequestsFromForks: true
     addBadge: true
+tasks:
+  - init: gem install gosu
