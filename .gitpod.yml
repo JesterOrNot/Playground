@@ -3,3 +3,12 @@ github:
     branches: true
     pullRequestsFromForks: true
     addBadge: true
+ports:
+  - port: 3000
+    onOpen: open-preview
+tasks:
+  - init: bundle install && yarn install --check-files
+    command: rails server
+vscode:
+  extensions:
+    - bung87.rails@0.16.7:IXQaE7PUhn9K+2iTc/HF1w==
